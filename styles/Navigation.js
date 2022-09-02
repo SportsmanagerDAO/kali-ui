@@ -275,7 +275,7 @@ export const NavigationMenuComponent = () => {
           <NavigationMenuTrigger></NavigationMenuTrigger>
           <NavigationMenuContent>
             <ContentList layout="one">
-              <ContentListItem title="Getting Started" href="https://docs.kali.gg/"></ContentListItem>
+              <ContentListItem title="Getting Started" href="https://docs.sportsmanager.gg/"></ContentListItem>
               <ContentListItem title="Service Providers" href="/services"></ContentListItem>
               <ContentListItem title="Legal Tools" href="/tools"></ContentListItem>
               <ContentListItem
@@ -286,9 +286,13 @@ export const NavigationMenuComponent = () => {
               <ContentListItem
                 title="Twitter"
                 icon={<FaTwitter />}
-                href="https://twitter.com/_KaliDAO"
+                href="https://twitter.com/SportsmanagerDAO"
               ></ContentListItem>
-              <ContentListItem title="GitHub" icon={<FaGithub />} href="https://github.com/kalidao/"></ContentListItem>
+              <ContentListItem
+                title="GitHub"
+                icon={<FaGithub />}
+                href="https://github.com/SportsmanagerDAO/"
+              ></ContentListItem>
             </ContentList>
           </NavigationMenuContent>
         </NavigationMenuItem>

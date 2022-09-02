@@ -68,7 +68,7 @@ export default function Identity({ setStep }) {
           <Input
             type="text"
             name="name"
-            placeholder="KaliDAO"
+            placeholder="SportsClubDAO"
             aria-invalid={errors.name ? 'true' : 'false'}
             {...register('name', {
               required: {
@@ -87,7 +87,7 @@ export default function Identity({ setStep }) {
           <Input
             type="text"
             name="symbol"
-            placeholder="KALI"
+            placeholder="SportsClub"
             aria-invalid={errors.symbol ? 'true' : 'false'}
             {...register('symbol', {
               required: {

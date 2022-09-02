@@ -54,7 +54,7 @@ export default function HomePage({ daos }) {
   const [chain, setChain] = useState('1')
 
   return (
-    <Layout heading="Home" content="Create or join a Kali DAO.">
+    <Layout heading="Home" content="Create or join a SportsClub DAO.">
       <Flex
         css={{
           marginTop: '5rem',

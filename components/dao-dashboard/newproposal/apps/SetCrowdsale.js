@@ -5,8 +5,8 @@ import { erc20ABI, useContract, useSigner } from 'wagmi'
 import { Flex, Text, Button } from '../../../../styles/elements'
 import { Form, FormElement, Label, Input, Select } from '../../../../styles/form-elements'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
-import KALIACCESS_ABI from '../../../../abi/SportsClubAccessManagerV2.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBACCESS_ABI from '../../../../abi/SportsClubAccessManagerV2.json'
 import { ipfsCrowdsaleData, ipfsCrowdsaleReceipt, ipfsCrowdsaleTerms } from '../../../tools/ipfsHelpers'
 import { addresses } from '../../../../constants/addresses'
 import { fetchExtensionStatus } from '../../../../utils/fetchExtensionStatus'
@@ -27,15 +27,15 @@ export default function SetCrowdsale({ setProposal, title, editor }) {
   const { data: signer } = useSigner()
   const crowdsaleAddress = addresses[chainId]['extensions']['crowdsale2']
 
-  const kalidao = useContract({
+  const sportsClubDao = useContract({
     addressOrName: daoAddress,
-    contractInterface: KALIDAO_ABI,
+    contractInterface: SPORTSCLUBDAO_ABI,
     signerOrProvider: signer,
   })
 
-  const kaliAccess = useContract({
+  const sportsClubAccess = useContract({
     addressOrName: addresses[chainId]['access2'],
-    contractInterface: KALIACCESS_ABI,
+    contractInterface: SPORTSCLUBACCESS_ABI,
     signerOrProvider: signer,
   })
 
@@ -102,7 +102,7 @@ export default function SetCrowdsale({ setProposal, title, editor }) {
     setAccessList(list)
 
     try {
-      const tx = await kaliAccess.createList(list, ethers.utils.formatBytes32String('0x0'), '')
+      const tx = await sportsClubAccess.createList(list, ethers.utils.formatBytes32String('0x0'), '')
       console.log('tx ', tx)
       setIsRecorded(true)
       setWarning(null)
@@ -131,7 +131,7 @@ export default function SetCrowdsale({ setProposal, title, editor }) {
     } else if (purchaseAccess === 'accredited') {
       _purchaseAccess = 1
     } else {
-      let id = await kaliAccess.listCount()
+      let id = await sportsClubAccess.listCount()
       id = ethers.utils.formatUnits(id, 'wei')
       _purchaseAccess = parseInt(id)
     }
@@ -230,7 +230,7 @@ export default function SetCrowdsale({ setProposal, title, editor }) {
     try {
       if (decimals == 18 || decimals == 6 || _purchaseAsset == AddressZero) {
         setWarning('')
-        const tx = await kalidao.propose(
+        const tx = await sportsClubDao.propose(
           9, // EXTENSION prop
           docs,
           [crowdsaleAddress],
@@ -254,9 +254,9 @@ export default function SetCrowdsale({ setProposal, title, editor }) {
           fontFamily: 'Regular',
         }}
       >
-        The Contribution extension allows anyone to contribute ETH or ERC20 tokens, e.g., DAI, in exchange for KaliDAO
-        tokens. To enable the Contribution exntension, submit form below to create proposal, vote on the proposal, and
-        start accepting contributions from your community.
+        The Contribution extension allows anyone to contribute ETH or ERC20 tokens, e.g., DAI, in exchange for
+        SportsClubDAO tokens. To enable the Contribution exntension, submit form below to create proposal, vote on the
+        proposal, and start accepting contributions from your community.
       </Text>
       <Form>
         <FormElement>

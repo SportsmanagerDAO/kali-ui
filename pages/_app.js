@@ -13,7 +13,7 @@ const { chains, provider } = configureChains(
 )
 
 const { connectors } = getDefaultWallets({
-  appName: 'KALI',
+  appName: 'SportsClub',
   chains,
 })
 

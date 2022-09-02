@@ -1,5 +1,5 @@
 {
-  "name": "kali-ui",
+  "name": "sportsmanager-clubdao-ui",
   "private": true,
   "scripts": {
     "dev": "next dev",

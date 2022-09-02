@@ -4,7 +4,7 @@ import { useContract, useSigner } from 'wagmi'
 import { Flex, Text, Button } from '../../../../styles/elements'
 import { Form, FormElement, Label, Input } from '../../../../styles/form-elements'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { useRouter } from 'next/router'
 import { createProposal } from '../../../tools/createProposal'
 import Back from '../../../../styles/proposal/Back'
@@ -16,9 +16,9 @@ export default function AddMember({ setProposal, editor, title }) {
   const daoChainId = router.query.chainId
   const { data: signer } = useSigner()
 
-  const kalidao = useContract({
+  const sportsClubDao = useContract({
     addressOrName: daoAddress,
-    contractInterface: KALIDAO_ABI,
+    contractInterface: SPORTSCLUBDAO_ABI,
     signerOrProvider: signer,
   })
 
@@ -45,7 +45,7 @@ export default function AddMember({ setProposal, editor, title }) {
     console.log('Proposal Params - ', 0, docs, [recipient], [amt], [Array(0)])
 
     try {
-      const tx = await kalidao.propose(0, docs, [recipient], [amt], [Array(0)])
+      const tx = await sportsClubDao.propose(0, docs, [recipient], [amt], [Array(0)])
       console.log('tx', tx)
     } catch (e) {
       console.log('error', e)

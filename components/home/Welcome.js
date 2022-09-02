@@ -91,7 +91,11 @@ export default function Welcome({ daos }) {
       </Box>
       <SearchBar>
         <GoSearch />
-        <SearchInput placeholder="KaliDAO" onChange={(e) => setSearch(e.target.value)} onKeyPress={handleKeypress} />
+        <SearchInput
+          placeholder="SportsClubDAO"
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyPress={handleKeypress}
+        />
       </SearchBar>
       <Flex gap="md">
         <Button

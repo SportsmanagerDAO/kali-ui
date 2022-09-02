@@ -1,6 +1,6 @@
 # About
 
-You can find the latest deployment at https://app.kalidao.xyz/
+You can find the latest deployment at https://app.sportsclubdao.xyz/
 
 # Getting Started Instructions
 

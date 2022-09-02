@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useContractWrite } from 'wagmi'
 import { Flex, Text, Button, Warning } from '../../../../styles/elements'
 import { Form, FormElement, Label, Input } from '../../../../styles/form-elements'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { useRouter } from 'next/router'
 import { AddressZero } from '@ethersproject/constants'
 import { createProposal } from '../../../tools/createProposal'
@@ -18,7 +18,7 @@ export default function Escape({ kill, title, editor }) {
   const { writeAsync } = useContractWrite(
     {
       addressOrName: daoAddress,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'propose',
   )

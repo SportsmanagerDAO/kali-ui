@@ -1,7 +1,7 @@
 import { copy } from './copy'
 import { getDaoChain } from './getDaoChain'
 import { votingPeriodToSeconds, formatVotingPeriod } from './votingPeriod'
-import { computeKaliAddress } from './computeKaliAddress'
+import { computeSportsClubAddress } from './computeSportsClubAddress'
 import { prettyDate } from './prettyDate'
 import { isHolder } from './isHolder'
 import { fetchTokens } from './fetchTokens'
@@ -13,7 +13,7 @@ export {
   getDaoChain,
   votingPeriodToSeconds,
   formatVotingPeriod,
-  computeKaliAddress,
+  computeSportsClubAddress,
   prettyDate,
   isHolder,
   fetchTokens,

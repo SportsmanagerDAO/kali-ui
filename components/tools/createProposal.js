@@ -1,5 +1,6 @@
 import fleek from '@fleekhq/fleek-storage-js'
 
+// TODO: rename contract after sportsclub contracts deployed
 // createProposal and upload
 export async function createProposal(dao, chainId, type, title, description) {
   const obj = {

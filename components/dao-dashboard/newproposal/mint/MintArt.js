@@ -4,8 +4,8 @@ import { Flex, Text, Button, Warning, Box, Image } from '../../../../styles/elem
 import { Form, FormElement, Label, Input, Select } from '../../../../styles/form-elements'
 import { ethers } from 'ethers'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
-import KALINFT_ABI from '../../../../abi/SportsClubNFT.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBNFT_ABI from '../../../../abi/SportsClubNFT.json'
 import { useRouter } from 'next/router'
 import { uploadIpfs } from '../../../tools/ipfsHelpers'
 import Back from '../../../../styles/proposal/Back'
@@ -26,14 +26,14 @@ export default function MintArt({ setProposal }) {
   const { writeAsync } = useContractWrite(
     {
       addressOrName: addresses[daoChainId]['nft'],
-      contractInterface: KALINFT_ABI,
+      contractInterface: SPORTSCLUBNFT_ABI,
     },
     'mint',
   )
   const { data: daoName } = useContractRead(
     {
       addressOrName: daoAddress,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'name',
     {
@@ -43,7 +43,7 @@ export default function MintArt({ setProposal }) {
   const { data: _totalSupply } = useContractRead(
     {
       addressOrName: addresses[daoChainId]['nft'],
-      contractInterface: KALINFT_ABI,
+      contractInterface: SPORTSCLUBNFT_ABI,
     },
     'totalSupply',
     {
@@ -65,7 +65,7 @@ export default function MintArt({ setProposal }) {
     const timestamp = date.getTime()
 
     if (title && description && file && copyright) {
-      const hash = await uploadIpfs(daoAddress, `KaliNFT #${totalSupply}`, file)
+      const hash = await uploadIpfs(daoAddress, `SportsClubNFT #${totalSupply}`, file)
       const metadata = {
         title: title,
         description: description,
@@ -105,7 +105,7 @@ export default function MintArt({ setProposal }) {
     if (metadata) {
       const data = JSON.stringify(metadata)
       console.log(data)
-      tokenUri = await uploadIpfs(daoAddress, `KaliNFT #${totalSupply} Metadata`, data)
+      tokenUri = await uploadIpfs(daoAddress, `SportsClubNFT #${totalSupply} Metadata`, data)
     }
 
     try {

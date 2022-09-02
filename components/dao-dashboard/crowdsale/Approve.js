@@ -54,7 +54,7 @@ const Approve = ({ info, dao, amount, chainId, purchaseTokenSymbol }) => {
         },
       }}
     >
-      Allow KALI to use your {purchaseTokenSymbol}
+      Allow SportsClub to use your {purchaseTokenSymbol}
     </Button>
   )
 }

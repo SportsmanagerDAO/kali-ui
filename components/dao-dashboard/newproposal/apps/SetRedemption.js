@@ -5,7 +5,7 @@ import { useContract, useSigner } from 'wagmi'
 import { Flex, Text, Button } from '../../../../styles/elements'
 import { Form, FormElement, Label, Input, Switch } from '../../../../styles/form-elements'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { uploadIpfs } from '../../../tools/ipfsHelpers'
 import { addresses } from '../../../../constants/addresses'
 import { tokens } from '../../../../constants/tokens'
@@ -20,9 +20,9 @@ export default function SetRedemption({ setProposal, title, editor }) {
   const { data: signer } = useSigner()
   const redemptionAddress = addresses[daoChainId]['extensions']['redemption']
 
-  const kalidao = useContract({
+  const sportsClubDao = useContract({
     addressOrName: daoAddress,
-    contractInterface: KALIDAO_ABI,
+    contractInterface: SPORTSCLUBDAO_ABI,
     signerOrProvider: signer,
   })
 
@@ -101,7 +101,7 @@ export default function SetRedemption({ setProposal, title, editor }) {
     )
 
     try {
-      const tx = await kalidao.propose(
+      const tx = await sportsClubDao.propose(
         9, // EXTENSION prop
         docs,
         [addresses[daoChainId]['extensions']['redemption']],

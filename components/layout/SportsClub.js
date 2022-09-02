@@ -10,7 +10,7 @@ const LogoContainer = styled('div', {
   filter: 'grayscale(100%)',
 })
 
-export default function Kali() {
+export default function SportsClub() {
   const router = useRouter()
 
   const home = () => {
@@ -19,8 +19,8 @@ export default function Kali() {
 
   return (
     <LogoContainer>
-      {/* KALI */}
-      <Image src="/icons/K-logo.svg" alt="KALI" width="48px" height="48px" onClick={home} priority />
+      {/* SportsClub */}
+      <Image src="/icons/K-logo.svg" alt="SportsClub" width="48px" height="48px" onClick={home} priority />
     </LogoContainer>
   )
 }
