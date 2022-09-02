@@ -1,5 +1,5 @@
 import React from 'react'
-import Kali from './Kali'
+import SportsClub from './SportsClub'
 import { styled } from '../../styles/stitches.config'
 import { Flex, Box, Text } from '../../styles/elements'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
@@ -24,7 +24,7 @@ const StyledHeader = styled(Flex, {
 export default function Header({ heading, props }) {
   return (
     <StyledHeader {...props}>
-      <Kali />
+      <SportsClub />
       <Flex
         css={{
           position: 'relative',

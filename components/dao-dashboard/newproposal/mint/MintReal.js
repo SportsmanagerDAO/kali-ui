@@ -4,8 +4,8 @@ import { Flex, Text, Button, Warning, Box, Image } from '../../../../styles/elem
 import { Form, FormElement, Label, Input, Select } from '../../../../styles/form-elements'
 import { ethers } from 'ethers'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
-import KALINFT_ABI from '../../../../abi/SportsClubNFT.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBNFT_ABI from '../../../../abi/SportsClubNFT.json'
 import { useRouter } from 'next/router'
 import { isHolder } from '../../../../utils'
 import { uploadIpfs } from '../../../tools/ipfsHelpers'
@@ -22,7 +22,7 @@ export default function MintReal({ setProposal }) {
   const { data: daoName } = useContractRead(
     {
       addressOrName: daoAddress,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'name',
     {
@@ -32,7 +32,7 @@ export default function MintReal({ setProposal }) {
   const { data: totalSupply_, error } = useContractRead(
     {
       addressOrName: addresses[daoChainId]['nft'] ? addresses[daoChainId]['nft'] : AddressZero,
-      contractInterface: KALINFT_ABI,
+      contractInterface: SPORTSCLUBNFT_ABI,
     },
     'totalSupply',
     {
@@ -61,7 +61,7 @@ export default function MintReal({ setProposal }) {
     const timestamp = date.getTime()
 
     if (title && description && classification && location && parcels && file) {
-      const hash = await uploadIpfs(daoAddress, `KaliNFT #${totalSupply}`, file)
+      const hash = await uploadIpfs(daoAddress, `SportsClubNFT #${totalSupply}`, file)
       const metadata = {
         title: title,
         description: description,
@@ -98,12 +98,12 @@ export default function MintReal({ setProposal }) {
     }
   }, [file])
 
-  // Get KaliNFT total supply
+  // Get SportsClubNFT total supply
   useEffect(() => {
     const getTotalSupply = async () => {
       console.log(signer, isLoading)
       try {
-        const instance = new ethers.Contract(addresses[daoChainId]['nft'], KALINFT_ABI, signer)
+        const instance = new ethers.Contract(addresses[daoChainId]['nft'], SPORTSCLUBNFT_ABI, signer)
         const _totalSupply = await instance.totalSupply()
         _totalSupply = ethers.utils.formatUnits(_totalSupply, 'wei')
         setTotalSupply(_totalSupply)
@@ -127,11 +127,11 @@ export default function MintReal({ setProposal }) {
     if (metadata) {
       const data = JSON.stringify(metadata)
       console.log(data)
-      tokenUri = await uploadIpfs(daoAddress, `KaliNFT #${totalSupply} Metadata`, data)
+      tokenUri = await uploadIpfs(daoAddress, `SportsClubNFT #${totalSupply} Metadata`, data)
     }
 
     try {
-      const instance = new ethers.Contract(addresses[daoChainId]['nft'], KALINFT_ABI, signer)
+      const instance = new ethers.Contract(addresses[daoChainId]['nft'], SPORTSCLUBNFT_ABI, signer)
       const tx = await instance.mint(daoAddress, _totalSupply, tokenUri)
       console.log('tx', tx)
     } catch (e) {

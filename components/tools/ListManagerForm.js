@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import kaliAccessManager from '../../eth/kaliAccessManager'
+import sportsClubAccessManager from '../../eth/sportsClubAccessManager'
 import { AiOutlineDelete, AiOutlineUserAdd } from 'react-icons/ai'
 import { useForm, Controller, useFieldArray } from 'react-hook-form'
 import Tip from '../elements/Tip'
@@ -24,7 +24,7 @@ export default function TokenForm() {
   const submit = async (values) => {
     const { members, merkle } = values
 
-    const factory = kaliAccessManager(addresses[chainId]['access'], web3)
+    const factory = sportsClubAccessManager(addresses[chainId]['access'], web3)
 
     let array = []
 

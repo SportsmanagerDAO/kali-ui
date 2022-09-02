@@ -10,7 +10,7 @@ export default function ProposalsMenu({ setProposal }) {
     <Flex dir="col" gap="md">
       <Text variant="instruction">Different types of proposals for different needs.</Text>
       <Text variant="instruction">External calls are calls to another smart contract directly. User beware.</Text>
-      <Text variant="instruction">Apps are add-ons for KaliDAOs. Check out what's available. </Text>
+      <Text variant="instruction">Apps are add-ons for SportsClubDAOs. Check out what's available. </Text>
       <Menu>
         <Menu.Item onClick={() => setProposal('membersMenu')}>
           <MdOutlineManageAccounts />

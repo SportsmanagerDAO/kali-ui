@@ -3,7 +3,7 @@ import { useContract, useContractRead, useSigner } from 'wagmi'
 import { Flex, Text, Button, Warning } from '../../../../styles/elements'
 import { Form, FormElement, Label, Input } from '../../../../styles/form-elements'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { useRouter } from 'next/router'
 import { uploadIpfs } from '../../../tools/ipfsHelpers'
 import { AddressZero } from '@ethersproject/constants'
@@ -33,7 +33,7 @@ export default function UpdateQuorum({ setView }) {
   const { data: currentQuorum } = useContractRead(
     {
       addressOrName: daoAddress,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'quorum',
     {
@@ -42,9 +42,9 @@ export default function UpdateQuorum({ setView }) {
   )
   const { data: signer } = useSigner()
 
-  const kalidao = useContract({
+  const sportsClubDao = useContract({
     addressOrName: daoAddress,
-    contractInterface: KALIDAO_ABI,
+    contractInterface: SPORTSCLUBDAO_ABI,
     signerOrProvider: signer,
   })
 
@@ -69,7 +69,7 @@ export default function UpdateQuorum({ setView }) {
 
     if (quorum) {
       try {
-        const tx = await kalidao.propose(
+        const tx = await sportsClubDao.propose(
           5, // QUORUM prop
           docs,
           [AddressZero],

@@ -37,7 +37,7 @@ export default function Checkout({ setStep }) {
       addressOrName: activeChain?.id ? addresses[activeChain.id]['factory'] : AddressZero,
       contractInterface: FACTORY_ABI,
     },
-    'deployKaliDAO',
+    'deploySportsClubDAO',
     {
       onSuccess(data) {
         console.log('success!', data)
@@ -46,7 +46,7 @@ export default function Checkout({ setStep }) {
   )
 
   // remove ricardian as default
-  const deployKaliDao = useCallback(async () => {
+  const deploySportsClubDao = useCallback(async () => {
     if (!account || !activeChain) return
 
     const {
@@ -213,7 +213,7 @@ export default function Checkout({ setStep }) {
         <Button
           variant="cta"
           css={{ width: '100%' }}
-          onClick={deployKaliDao}
+          onClick={deploySportsClubDao}
           disabled={isWritePending || isWriteSuccess}
         >
           {isWritePending ? <div>Confirm Deployment</div> : <div>Deploy</div>}

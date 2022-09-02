@@ -3,7 +3,7 @@ import { ethers } from 'ethers'
 import { useRouter } from 'next/router'
 import { addresses } from '../../../../../constants/addresses'
 import decodeExtensions from './decodeExtensions'
-import KALIDAO_ABI from '../../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../../abi/SportsClubDAO.json'
 import { useContractRead } from 'wagmi'
 
 export default function Extension({ accounts, amounts, payloads }) {
@@ -13,7 +13,7 @@ export default function Extension({ accounts, amounts, payloads }) {
   const { data: status, error } = useContractRead(
     {
       addressOrName: dao,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'extensions',
     {

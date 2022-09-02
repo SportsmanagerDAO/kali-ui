@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import kaliTokenFactory from '../../eth/kaliToken'
+import sportsClubTokenFactory from '../../eth/sportsClubToken'
 import { AiOutlineDelete, AiOutlineUserAdd } from 'react-icons/ai'
 import { useForm, Controller, useFieldArray } from 'react-hook-form'
 import Tip from '../elements/Tip'
@@ -52,7 +52,7 @@ export default function TokenForm() {
   const submit = async (values) => {
     const { owner, name, symbol, details, paused, recipients } = values
 
-    const factory = kaliTokenFactory(addresses[chainId]['erc20factory'], web3)
+    const factory = sportsClubTokenFactory(addresses[chainId]['erc20factory'], web3)
 
     owner = await resolveAddressAndEns(owner)
 

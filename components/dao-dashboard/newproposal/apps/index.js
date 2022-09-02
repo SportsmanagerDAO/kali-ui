@@ -15,11 +15,11 @@ function AppsMenu({ setProposal }) {
       <Text> </Text>
       <Text variant="instruction">(1) Contribute :</Text>
       <Text variant="instruction">
-        KaliDAOs may swap their KaliDAO tokens for ETH or ERC20 tokens publicly or privately.
+        SportsClubDAOs may swap their SportsClubDAO tokens for ETH or ERC20 tokens publicly or privately.
       </Text>
       <Text variant="instruction">(2) Redemption :</Text>
       <Text variant="instruction">
-        KaliDAO members may redeem a portion of KaliDAO treasury by burning their KaliDAO tokens.
+        SportsClubDAO members may redeem a portion of SportsClubDAO treasury by burning their SportsClubDAO tokens.
       </Text>
       <Menu>
         <Menu.Item onClick={() => setProposal('crowdsale')}>

@@ -11,7 +11,7 @@ import { Warning } from '../../../../styles/elements'
 import { AddressZero } from '@ethersproject/constants'
 import Spinner from '../../../elements/Spinner'
 
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import REDEMPTION_ABI from '../../../../abi/SportsClubDAOredemption.json'
 import { addresses } from '../../../../constants/addresses'
 
@@ -24,7 +24,7 @@ export default function Redeem() {
   const { data, isWriteError, isWritePending, writeAsync } = useContractWrite(
     {
       addressOrName: daoAddress,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'callExtension',
     {
@@ -36,7 +36,7 @@ export default function Redeem() {
   const { data: symbol, isSymbolLoading } = useContractRead(
     {
       addressOrName: daoAddress ? daoAddress : AddressZero,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'symbol',
     {

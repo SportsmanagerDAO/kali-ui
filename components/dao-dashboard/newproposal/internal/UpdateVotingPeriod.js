@@ -4,7 +4,7 @@ import { Flex, Text, Button, Warning } from '../../../../styles/elements'
 import { Form, FormElement, Label, Input } from '../../../../styles/form-elements'
 import { Select } from '../../../../styles/form-elements/Select'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { useRouter } from 'next/router'
 import { uploadIpfs } from '../../../tools/ipfsHelpers'
 import { AddressZero } from '@ethersproject/constants'
@@ -34,15 +34,15 @@ export default function UpdateVotingPeriod({ setView }) {
     injectCSS: false,
   })
   const { data: signer } = useSigner()
-  const kalidao = useContract({
+  const sportsClubDao = useContract({
     addressOrName: daoAddress,
-    contractInterface: KALIDAO_ABI,
+    contractInterface: SPORTSCLUBDAO_ABI,
     signerOrProvider: signer,
   })
   const { data: votingPeriod, isWaitingVotingPeriod } = useContractRead(
     {
       addressOrName: daoAddress,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'votingPeriod',
     {
@@ -73,7 +73,7 @@ export default function UpdateVotingPeriod({ setView }) {
     // console.log('Proposal Params - ', 2, docs, [AddressZero], [seconds], [Array(0)])
     if (seconds) {
       try {
-        const tx = await kalidao.propose(
+        const tx = await sportsClubDao.propose(
           3, // VPERIOD prop
           docs,
           [AddressZero],

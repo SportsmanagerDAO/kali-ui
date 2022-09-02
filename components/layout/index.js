@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Box } from '../../styles/elements'
 
 export default function Layout({ heading, content, children, props }) {
-  const title = 'KALI - ' + heading
+  const title = 'SportsClub - ' + heading
 
   return (
     <div>

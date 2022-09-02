@@ -1,4 +1,4 @@
-// TODO: Add kali master for polygon
+// TODO: Add sportsClub master for polygon
 export const addresses =
   // organized by chainId
   {
@@ -19,7 +19,7 @@ export const addresses =
         manager: '0xeEffB992BE91B1FAC8C69bE4F2a8d5e334C02282',
       },
       blockExplorer: 'https://etherscan.io',
-      kaliMaster: '0xfc0Fd933D8ef5b7e552E67aCfc4c09711B413f30',
+      sportsClubMaster: '0xfc0Fd933D8ef5b7e552E67aCfc4c09711B413f30',
     },
     // Polygon
     137: {
@@ -38,7 +38,7 @@ export const addresses =
         manager: '0x54e2b96d6f23B5ec8244054816fe3B33412c8538',
       },
       blockExplorer: 'https://polygonscan.com',
-      kaliMaster: '0x93fd58eDAf318E03eD1941e593D74d88b8F4f599',
+      sportsClubMaster: '0x93fd58eDAf318E03eD1941e593D74d88b8F4f599',
     },
     // Arbitrum
     42161: {
@@ -57,7 +57,7 @@ export const addresses =
         manager: '0xb47c9A6A494d344026C60c19C74f54f6AbA54fAa',
       },
       blockExplorer: 'https://arbiscan.io',
-      kaliMaster: '0xffe7e91f86fa2c6af0b3cddf0f0906d465e1d760',
+      sportsClubMaster: '0xffe7e91f86fa2c6af0b3cddf0f0906d465e1d760',
     },
     // Optimism
     10: {
@@ -69,7 +69,7 @@ export const addresses =
         crowdsale2: '0x05622EF2b9290f19230FD10e80BB468c51e17b2d',
         redemption: '0x2b8f116e4D9E73A3A9E7CAF1655B9FC01588Db8d',
       },
-      kaliMaster: '0x0D46996D55bB33D32D43E610aac5B64b477e9cBD',
+      sportsClubMaster: '0x0D46996D55bB33D32D43E610aac5B64b477e9cBD',
       ricardian: '0x581b5E51fFBB742f92E818Fb177CAD8a30e43f3E',
       blockExplorer: 'https://optimistic.etherscan.io',
     },
@@ -90,13 +90,13 @@ export const addresses =
         manager: '0xCFAEA98787d835D127863ED4127F42d00F3D267d',
       },
       blockExplorer: 'https://rinkeby.etherscan.io',
-      kaliMaster: '0x55967de5aE91F6E1D98b813b9Dca3946bE9f5C20',
+      sportsClubMaster: '0x55967de5aE91F6E1D98b813b9Dca3946bE9f5C20',
     },
     // Goerli
     5: {
       name: 'Goerli',
       ricardian: '0x503297a0bf06B1A33124Cd93e486f17A7F7fDF20',
-      kaliMaster: '0x0D46996D55bB33D32D43E610aac5B64b477e9cBD',
+      sportsClubMaster: '0x0D46996D55bB33D32D43E610aac5B64b477e9cBD',
       factory: '0xDDdFf70C77Cffcf97Fb91F7aC4aD0E12E8C14571',
       erc20factory: '0x2BF66A443C1553d3F9fb41A83804ABC41B8005f7',
       nft: '',

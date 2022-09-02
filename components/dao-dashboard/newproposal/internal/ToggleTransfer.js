@@ -3,7 +3,7 @@ import { useContractWrite, useContractRead } from 'wagmi'
 import { Flex, Text, Button } from '../../../../styles/elements'
 import { Form, FormElement, Label, Input } from '../../../../styles/form-elements'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { useRouter } from 'next/router'
 import { uploadIpfs } from '../../../tools/ipfsHelpers'
 import { AddressZero } from '@ethersproject/constants'
@@ -36,14 +36,14 @@ export default function ToggleTransfer({ setView }) {
   const { writeAsync } = useContractWrite(
     {
       addressOrName: daoAddress,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'propose',
   )
   const { data: paused } = useContractRead(
     {
       addressOrName: daoAddress,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'paused',
     {

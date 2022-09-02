@@ -2,7 +2,7 @@ import { ethers } from 'ethers'
 import { supportedChains } from '../constants/supportedChains'
 
 // TODO:
-// Very unlikely there is non-kali contract at address from router
+// Very unlikely there is non-sportsclub contract at address from router
 export async function getDaoChain(address) {
   if (address != null) {
     for (let i = 0; i < supportedChains.length; i++) {

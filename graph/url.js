@@ -1,3 +1,4 @@
+// TODO: Update sports manager subgraph urls
 export const GRAPH_URL = {
   1: 'https://api.thegraph.com/subgraphs/name/nerderlyne/kali-mainnet',
   42161: 'https://api.thegraph.com/subgraphs/name/nerderlyne/kali-arbitrum',

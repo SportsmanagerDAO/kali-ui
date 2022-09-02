@@ -6,7 +6,7 @@ import { tos } from '../constants/tos'
 export default function ToS() {
   return (
     <Layout
-      heading="KaliCo Terms of Service"
+      heading="SportsClub Terms of Service"
       content="The terms contained here define our relationship with each other."
     >
       <Box

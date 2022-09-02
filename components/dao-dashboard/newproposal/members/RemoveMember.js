@@ -3,7 +3,7 @@ import { ethers } from 'ethers'
 import { useContract, useSigner } from 'wagmi'
 import { Flex, Text, Button } from '../../../../styles/elements'
 import { Form, FormElement, Label, Input } from '../../../../styles/form-elements'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { useRouter } from 'next/router'
 import Back from '../../../../styles/proposal/Back'
 import { createProposal } from '../../../tools/createProposal'
@@ -14,9 +14,9 @@ export default function RemoveMember({ setProposal, editor, title }) {
   const daoChainId = router.query.chainId
   const { data: signer } = useSigner()
 
-  const kalidao = useContract({
+  const sportsClubDao = useContract({
     addressOrName: daoAddress,
-    contractInterface: KALIDAO_ABI,
+    contractInterface: SPORTSCLUBDAO_ABI,
     signerOrProvider: signer,
   })
 
@@ -41,7 +41,7 @@ export default function RemoveMember({ setProposal, editor, title }) {
     console.log('Proposal Params - ', 1, docs, [recipient], [amt], [Array(0)])
 
     try {
-      const tx = await kalidao.propose(1, docs, [recipient], [amt], [Array(0)])
+      const tx = await sportsClubDao.propose(1, docs, [recipient], [amt], [Array(0)])
       console.log('tx', tx)
     } catch (e) {
       console.log('error', e)

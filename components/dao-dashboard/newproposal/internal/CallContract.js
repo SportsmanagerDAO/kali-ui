@@ -4,7 +4,7 @@ import { Flex, Text, Button, Warning } from '../../../../styles/elements'
 import { Form, FormElement, Label, Input } from '../../../../styles/form-elements'
 import { Select } from '../../../../styles/form-elements/Select'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import SPORTSCLUBDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { useRouter } from 'next/router'
 import { uploadIpfs } from '../../../tools/ipfsHelpers'
 import { addresses } from '../../../../constants/addresses'
@@ -19,7 +19,7 @@ export default function CallContract({ setProposal, title, editor }) {
   const { data: daoName, isLoading } = useContractRead(
     {
       addressOrName: daoAddress,
-      contractInterface: KALIDAO_ABI,
+      contractInterface: SPORTSCLUBDAO_ABI,
     },
     'name',
     {
@@ -30,9 +30,9 @@ export default function CallContract({ setProposal, title, editor }) {
   const { data: signer } = useSigner()
   const { activeChain } = useNetwork()
 
-  const kalidao = useContract({
+  const sportsClubDao = useContract({
     addressOrName: daoAddress,
-    contractInterface: KALIDAO_ABI,
+    contractInterface: SPORTSCLUBDAO_ABI,
     signerOrProvider: signer,
   })
 
@@ -136,7 +136,7 @@ export default function CallContract({ setProposal, title, editor }) {
       console.log('Proposal Params - ', 2, docs, [contractAddress], [0], [payload])
 
       try {
-        const tx = await kalidao.propose(
+        const tx = await sportsClubDao.propose(
           2, // CALL prop
           docs,
           [contractAddress],

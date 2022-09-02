@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import kaliNFT from '../../eth/kaliNFT.js'
+import sportsClubNFT from '../../eth/sportsClubNFT.js'
 import { useForm } from 'react-hook-form'
 import Tip from '../elements/Tip'
 import fleek from '@fleekhq/fleek-storage-js'
@@ -101,7 +101,7 @@ function NftForm() {
     const owner = values.recipient
     owner = await resolveAddressAndEns(owner)
 
-    const nft = await kaliNFT(addresses[chainId]['nft'], web3)
+    const nft = await sportsClubNFT(addresses[chainId]['nft'], web3)
     const tokenId = await nft.methods.totalSupply().call()
     const metadata = await upload()
     const tokenUri = await uploadMetadata(metadata)

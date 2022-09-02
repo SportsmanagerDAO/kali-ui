@@ -45,6 +45,7 @@ export async function ipfsIncorporationDoc(name, summoner, doc) {
   }
 }
 
+// TODO: rename contract after sportsclub contracts deployed
 // Upload crowdsale data
 export async function ipfsCrowdsaleData(
   dao,

@@ -16,7 +16,7 @@ const { chains, provider, webSocketProvider } = configureChains(
 )
 
 const { connectors } = getDefaultWallets({
-  appName: 'KALI',
+  appName: 'SportsClub',
   chains,
 })
 
