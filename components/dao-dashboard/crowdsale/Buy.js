@@ -1,7 +1,7 @@
 import { erc20ABI, useContractRead, useContractWrite } from 'wagmi'
 import { Button } from '../../../styles/elements'
 import { addresses } from '../../../constants/addresses'
-import CROWDSALE_ABI from '../../../abi/KaliDAOcrowdsaleV2.json'
+import CROWDSALE_ABI from '../../../abi/SportsClubDAOcrowdsaleV2.json'
 import { ethers } from 'ethers'
 
 const Buy = ({ dao, symbol, decimals, amount, chainId, buttonText, shouldDisable, setSuccess, setTx }) => {

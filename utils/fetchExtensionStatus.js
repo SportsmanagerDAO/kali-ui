@@ -1,5 +1,5 @@
 import { ethers } from 'ethers'
-import KALIDAO_ABI from '../abi/KaliDAO.json'
+import KALIDAO_ABI from '../abi/SportsClubDAO.json'
 
 export async function fetchExtensionStatus(chainId, daoAddress, extensionAddress) {
   if (!chainId || !daoAddress) return

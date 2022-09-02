@@ -5,7 +5,7 @@ import { Form, FormElement, Label, Input } from '../../../../styles/form-element
 import { ethers } from 'ethers'
 import { Select } from '../../../../styles/form-elements/Select'
 import FileUploader from '../../../tools/FileUpload'
-import KALIDAO_ABI from '../../../../abi/KaliDAO.json'
+import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { useRouter } from 'next/router'
 import { uploadIpfs } from '../../../tools/ipfsHelpers'
 import { tokens } from '../../../../constants/tokens'

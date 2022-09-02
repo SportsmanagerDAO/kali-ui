@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React, { useCallback, useState, useEffect } from 'react'
 import { useContractWrite } from 'wagmi'
 import { Button } from '../../../styles/elements'
-import DAO_ABI from '../../../abi/KaliDAO.json'
+import DAO_ABI from '../../../abi/SportsClubDAO.json'
 
 export default function Process({ proposal }) {
   const router = useRouter()
