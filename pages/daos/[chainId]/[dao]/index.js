@@ -2,7 +2,7 @@ import Layout from '../../../../components/dao-dashboard/layout/'
 import { Home } from '../../../../components/dao-dashboard'
 import { useRouter } from 'next/router'
 import { useContractRead } from 'wagmi'
-import DAO_ABI from '../../../../abi/KaliDAO.json'
+import DAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { getProposals, getCrowdsale } from '../../../../graph/queries'
 
 export const getServerSideProps = async (context) => {

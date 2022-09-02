@@ -14,9 +14,9 @@ import Confirmation from './Confirmation'
 import Success from './Success'
 
 import { addresses } from '../../../constants/addresses'
-import FACTORY_ABI from '../../../abi/KaliDAOfactory.json'
-import REDEMPTION_ABI from '../../../abi/KaliDAOredemption.json'
-import SALE_ABI from '../../../abi/KaliDAOcrowdsale.json'
+import FACTORY_ABI from '../../../abi/SportsClubDAOfactory.json'
+import REDEMPTION_ABI from '../../../abi/SportsClubDAOredemption.json'
+import SALE_ABI from '../../../abi/SportsClubDAOcrowdsale.json'
 import { useRouter } from 'next/router'
 
 export default function Checkout({ setStep }) {

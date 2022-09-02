@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React, { useCallback } from 'react'
 import { useAccount, useContractWrite } from 'wagmi'
 import { Button } from '../../../styles/elements'
-import DAO_ABI from '../../../abi/KaliDAO.json'
+import DAO_ABI from '../../../abi/SportsClubDAO.json'
 
 export default function Cancel({ proposal }) {
   const router = useRouter()

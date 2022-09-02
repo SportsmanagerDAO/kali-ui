@@ -1,5 +1,5 @@
 import { ethers } from 'ethers'
-import DAO_ABI from '../../../../abi/KaliDAO.json'
+import DAO_ABI from '../../../../abi/SportsClubDAO.json'
 
 export async function fetchProposal(chainId, dao, id) {
   if (!chainId || !dao || !id) return

@@ -5,7 +5,7 @@ import { Box } from '../../../styles/elements'
 import { Spinner } from '../../elements'
 
 import { addresses } from '../../../constants/addresses'
-import FACTORY_ABI from '../../../abi/KaliDAOfactory.json'
+import FACTORY_ABI from '../../../abi/SportsClubDAOfactory.json'
 import { useRouter } from 'next/router'
 import { init, send } from 'emailjs-com'
 

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Box } from '../../../../styles/elements'
 import { BsFillHandThumbsUpFill, BsFillHandThumbsDownFill } from 'react-icons/bs'
 import { useAccount, useContractWrite } from 'wagmi'
-import DAO_ABI from '../../../../abi/KaliDAO.json'
+import DAO_ABI from '../../../../abi/SportsClubDAO.json'
 import { AddressZero } from '@ethersproject/constants'
 
 export default function Vote({ proposal }) {

@@ -11,8 +11,8 @@ import { Warning } from '../../../../styles/elements'
 import { AddressZero } from '@ethersproject/constants'
 import Spinner from '../../../elements/Spinner'
 
-import KALIDAO_ABI from '../../../../abi/KaliDAO.json'
-import REDEMPTION_ABI from '../../../../abi/KaliDAOredemption.json'
+import KALIDAO_ABI from '../../../../abi/SportsClubDAO.json'
+import REDEMPTION_ABI from '../../../../abi/SportsClubDAOredemption.json'
 import { addresses } from '../../../../constants/addresses'
 
 // TODO: Add error handling
